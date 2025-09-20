@@ -56,9 +56,8 @@ def parse_entry(tokens, start):
     if not isinstance(tokens[start], int):
         return [tokens[start]], start + 1
     length = tokens[start]
-    # sanity check: length must not exceed remaining tokens
     if start + 1 + length > len(tokens):
-        return [], start + 1  # skip invalid
+        return [], start + 1  
     data = []
     for i in range(length):
         data.append(tokens[start + 1 + i])
@@ -71,7 +70,7 @@ def parse_region(tokens, start):
     while idx < len(tokens):
         if not isinstance(tokens[idx], int) or tokens[idx] <= 0:
             break
-        if tokens[idx] > 50:   # assume lengths > 50 are not valid
+        if tokens[idx] > 50:   
             break
         entry, idx = parse_entry(tokens, idx)
         if entry:
@@ -256,3 +255,4 @@ def main():
 if __name__ == "__main__":
     main()
     input("Press Enter to exit...")
+
