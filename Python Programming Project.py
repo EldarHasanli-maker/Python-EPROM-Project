@@ -8,7 +8,7 @@ class Region:
         self.checksum_ok = checksum_ok
 
     def __str__(self):
-        return "Region(entries=" + str(len(self.entries)) + ", checksum=" + str(self.checksum) + ", ok=" + str(self.checksum_ok) + ")"
+        return f"Region(entries={len(self.entries)}, checksum={self.checksum}, ok={self.checksum_ok})"
 
 
 class Wheel:
@@ -255,6 +255,7 @@ def main():
 if __name__ == "__main__":
     main()
     input("Press Enter to exit...")
+
 
 
 
